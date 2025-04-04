@@ -1,0 +1,63 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>Details</strong>
+            
+          </div>
+          <form [formGroup]="form" (ngSubmit)='addUser()' ngNativeValidate>
+                <div class="card-body">
+                   
+                <div class="form-group">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                        <label for="first-name">First Name</label>
+                        <input type="text" class="form-control"  name="firstname"  formControlName="firstname" id="first-name" placeholder="First Name" required>
+                        <div *ngIf="f['firstname'].touched && f['firstname'].invalid" class="alert alert-danger">
+                          <div *ngIf="f['firstname'].errors && f['firstname'].errors['required']">Name is required.</div>
+                        </div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" class="form-control"  name="lastname"  formControlName="lastname" id="last-name" placeholder="Last Name" required>
+                        <div *ngIf="f['lastname'].touched && f['lastname'].invalid" class="alert alert-danger">
+                          <div *ngIf="f['lastname'].errors && f['lastname'].errors['required']">Name is required.</div>
+                        </div>
+                        </div>
+                    </div><!--/.row-->
+                    
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" formControlName="email" id="email" placeholder="Email" required>
+                        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                          <div *ngIf="f['email'].errors && f['email'].errors['required']">Name is required.</div>
+                          <div *ngIf="f['email'].errors && f['email'].errors['email']">Please, enter valid email address.</div>
+                        </div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control"  name="password"  formControlName="password" id="password" placeholder="Password" required>
+                        <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                          <div *ngIf="f['password'].errors && f['password'].errors['required']">Name is required.</div>
+                          <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password should be 6 character.</div>
+                        </div>
+                        </div>
+                    </div><!--/.row-->
+                   
+                </div>
+           
+                </div>
+
+                <div class="card-footer text-center">
+                    <button type="submit" class="btn btn-primary">SUBMIT</button>
+                    <button type="reset" class="btn btn-primary" (click)="back()">CANCEL</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>

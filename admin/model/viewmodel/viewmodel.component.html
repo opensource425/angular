@@ -1,0 +1,103 @@
+<!-- The content below is only a placeholder and can be replaced. -->
+
+<div class="cstm-main-sec">
+  <div class="row">
+    <div class="col-md-6 left">
+      <div class="box model-viewer">
+        <div class="d-flex justify-content-center">
+          <div id="progressBar" class="progress">
+            <img [src]="'assets/img/loader.gif'" alt="image">
+          </div>
+        </div>
+        <div id="imanual-app">
+          <!-- <div class="progress progress-sm mt-2">
+            <div class="progress-bar" role="progressbar" [style.width.%]="progress" id="progressBar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div> -->
+          <!-- <progress-bar id="progressBar"  [style.width.%]="progress"  >
+          </progress-bar> -->
+          
+          <div class="modelViewer" id="annotationsPanel"></div>
+          <!-- <button type="button" (click)="zoomIn()" >Zoom </button> -->
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 right">
+      <form #form='ngForm' (ngSubmit)='updateVal()' ngNativeValidate>
+        
+          <strong>Model Position & Controls</strong>
+        
+        
+        <div class="row model-position">
+          <div class="col-md-6">
+            <label>xPosition</label>
+            <input type="number" name="xPosition" min="-100" max="100" step="0.01" class="form-control" [(ngModel)]="xPosition" (keypress)="onChangeEvent($event)"  (change)="onChangeEvent($event)" required>
+          </div>
+          <div class="col-md-6">
+            <label>xControl</label>
+            <input type="number" name="xControl" min="-100" max="100" step="0.01" class="form-control" [(ngModel)]="xControl"  (keypress)="onChangeEvent($event)" (change)="onChangeEvent($event)" required>
+          </div>
+          <div class="col-md-6">
+            <label>yPosition</label>
+            <input type="number" name="yPosition" min="-100" max="100" step="0.01" class="form-control" [(ngModel)]="yPosition" (keypress)="onChangeEvent($event)"  (change)="onChangeEvent($event)" required>
+          </div>
+          <div class="col-md-6">
+            <label>yControl</label>
+            <input type="number" name="yControl" min="-100" max="100" step="0.01" class="form-control" [(ngModel)]="yControl" (keypress)="onChangeEvent($event)"  (change)="onChangeEvent($event)" required>
+          </div>
+        
+        <div class="col-md-6">
+          <label>zPosition</label>
+          <input type="number" name="zPosition" min="-100" max="100" step="0.01" class="form-control" [(ngModel)]="zPosition" (keypress)="onChangeEvent($event)"  (change)="onChangeEvent($event)" required>
+        </div>
+        
+        
+        <div class="col-md-6">
+          <label>zControl</label>
+          <input type="number" name="zControl" min="-10" max="10" step="0.01" class="form-control" [(ngModel)]="zControl" (keypress)="onChangeEvent($event)"   (change)="onChangeEvent($event)" required>
+        </div>
+        </div>
+      <!---  <strong>Animation Controls</strong> -->
+        <div class="row model-position">
+       <!-- <div class="col-md-6">
+          <label>xControl Animation</label>
+          <input type="number" name="xControlAnimation" min="-10" max="10" step="0.01" class="form-control" [(ngModel)]="xControlAnimation"  (change)="onChangeEvent($event)" required>
+      </div>
+      <div class="col-md-6">
+          <label>yControl Animation</label>
+          <input type="number" name="yControlAnimation" min="-10" max="10" step="0.01" class="form-control" [(ngModel)]="yControlAnimation"  (change)="onChangeEvent($event)" required>
+      </div>
+      <div class="col-md-6">
+          <label>zControl Animation</label>
+          <input type="number" name="zControlAnimation" min="-10" max="10" step="0.01" class="form-control" [(ngModel)]="zControlAnimation"  (change)="onChangeEvent($event)" required>
+      </div> 
+      <div class="col-md-6">
+         
+      </div> -->
+        <!-- <div class="col-md-6">
+          <div class="form-check">
+            <input class="form-check-input" [(ngModel)]="texture_loader" (change)="onChangeEvent($event)"  name="texture_loader" type="checkbox" value="" id="texture_loader">
+            <label class="form-check-label" for="texture_loader">
+              Texture
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-check">
+            <input class="form-check-input" [(ngModel)]="environment_hdr" (change)="onChangeEvent($event)" name="environment_hdr" type="checkbox" value="" id="environment_hdr">
+            <label class="form-check-label" for="environment_hdr">
+             Environment HDR
+            </label>
+          </div>
+        </div> -->
+        <div class="col-md-6">
+          <button  type="button" class="btn btn-sm btn-primary" style="float: right" (click)="updateVal()" >UPDATE</button>
+        </div>    
+        <div class="col-md-6">
+          <button  type="button" class="btn btn-sm btn-primary" style="float: right; margin-left: 40px;" (click)="back()" >CANCEL</button>
+        </div>
+        
+        </div>          
+      </form> 
+    </div>
+  </div>
+</div>

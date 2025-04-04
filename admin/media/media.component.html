@@ -1,0 +1,45 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                   <strong>Media</strong> 
+                </div>
+                <div><a class="btn-add" routerLink="/admin/media/add"><i class="fa fa-plus-circle" aria-hidden="true"></i></a></div>
+                <div class="card-body">
+                    <table class="table table-bordered table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Extension</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let m of media;">
+                                
+                                <td>{{m.name}}</td>
+                                <td>{{m.extension}}</td>
+                                <td>{{m.time | date:'medium'}}</td>
+                                <td><button class="btn btn-primary" (click)="copyMessage(m.url)" value="click to copy">Copy Link</button>
+                                </td>
+                            </tr>
+                            <tr *ngIf="media.length==0;"><td colspan="4">No Media to display</td></tr>
+                        </tbody>
+                    </table>
+                    <nav>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+    </div>
+</div>
+
+
+
+

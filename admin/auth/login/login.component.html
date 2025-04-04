@@ -1,0 +1,51 @@
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <div class="card-group">
+              <div class="card p-4">
+                <div class="card-body">
+                  <form ngNativeValidate>
+                    <h1>Login</h1>
+                    <p class="text-muted">Sign In to your account</p>
+                    <span *ngIf="errors" class="text-danger">{{
+                      errors
+                    }}</span>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-user"></i></span>
+                      </div>
+                      <input type="email" class="form-control" [(ngModel)]="body.email" placeholder="Email" name="email" required>
+                    </div>
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
+                      <input matInput [type]="showPassword ? 'text' : 'password'" type="password" class="form-control" placeholder="Password" [(ngModel)]="body.password" name="password"  id="password1" showHideInput required>
+                      <div class="input-group-append">
+                        <button class="input-group-text"  type="button" showHideTrigger="password1" (click)="togglePasswordVisibility()">
+                         <i class="{{showPassword?'fa fa-eye':'fa fa-eye-slash'}}"></i>
+                        </button>
+                      </div>
+                      
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-6">
+                        <button (click)="login()" type="submit" class="btn btn-primary px-4">Login</button>
+                      </div>
+                      <div class="col-6 text-right">
+                        <a [routerLink]="['/admin/forgot']"   class="btn btn-link px-0">Forgot password?</a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  

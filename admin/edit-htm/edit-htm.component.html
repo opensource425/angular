@@ -1,0 +1,9 @@
+<!-- <angular-editor [placeholder]="'Enter text here...'" [config]="editorConfig" [(ngModel)]="htmlContent"></angular-editor> -->
+<form #form='ngForm' (ngSubmit)='updateHTML()' ngNativeValidate>
+    <!-- <ckeditor [(ngModel)]="htmlContent" [editor]="Editor" [config]="editorConfig1" (change)="onChange($event)"></ckeditor> -->
+    <ckeditor editorUrl="assets/ckeditor/ckeditor.js" [(ngModel)]="htmlContent" [config]="{ allowedContent:true, embed_provider: '//ckeditor.iframe.ly/api/oembed?url={url}&callback={callback}' }" (change)="onChange($event)"></ckeditor>
+    <div class="edit-button text-center">
+        <button  type="submit" class="btn btn-sm btn-primary" >UPDATE</button>
+        <span><span><button  type="button" class="btn btn-sm btn-primary" (click)="back()" >CANCEL</button></span></span>
+    </div>
+</form>

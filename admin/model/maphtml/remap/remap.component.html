@@ -1,0 +1,53 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>{{modelName}}</strong>
+          </div>
+          <form #form='ngForm' (ngSubmit)='updateTopic()'>
+          <div class="card-body">
+              <div class="form-group row ">
+                <label class="col-md-2 col-form-label" for="file-multiple-input">Capter Name</label>
+                <div class="col-md-4">
+                    <label class="col-md-6 col-form-label">{{selectedData._name}}</label>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-md-2 col-form-label" for="file-multiple-input">HTML Topic</label>
+                <div class="col-md-4">
+                    <label class="col-md-6 col-form-label">{{selectedData._topic}}</label>
+                    <span><button type='button' class="btn btn-primary" (click)="onRevert()">Revert Back </button></span>
+                </div>
+              </div>
+
+              <div class="form-group row remap">
+                <label class="col-md-2 col-form-label" for="file-multiple-input">HTML Topic</label>
+                
+                <div class="col-md-4">
+                    <!-- <select class="form-select" [(ngModel)]="select" size="5" [ngStyle]="{'background-color':red}" (change)="onChange($event.target)"   aria-label="size 5 select ">
+                      <option *ngFor="let t of topicList"  value="{{t}}"  [selected]="t == selectedData._topic">
+                        {{ t }}
+                      </option>
+                    </select> -->
+                    <ngx-select-dropdown size="5" [config]="config" (change)="changeValue($event)"  [options]="topicList" 
+                    [(ngModel)]="topic_file" [multiple]="false" ></ngx-select-dropdown>
+                </div>
+              </div>
+              <div class="card-footer text-center">  
+                <button  type="submit" class="btn btn-sm btn-primary" >SAVE</button>
+                <span><button  type="button"  id="back" class="btn btn-sm btn-primary" (click)="back()" >CANCEL</button></span>
+              
+              </div>
+            </div>
+            <div class="card">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" #iframe  [src]="urlSafe"></iframe>
+                </div>
+              </div>
+                
+            </form>
+          </div>
+        </div>
+  </div>
+  

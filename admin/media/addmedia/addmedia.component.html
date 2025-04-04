@@ -1,0 +1,38 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <strong>Insert Media</strong>
+          </div>
+          <form #form='ngForm' (ngSubmit)='uploadFiles()' ngNativeValidate>
+          <div class="card-body">
+           
+              
+                
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="file-multiple-input">Media</label>
+                <div class="col-md-9">
+                  <!-- <input type="file" [uploadx]="options" (state)="onUpload($event)"> -->
+                    <input type="file" name="model" (change)="onFileChanged($event)" required>
+                    <div class="progress progress-xs mt-2">
+                      <div class="progress-bar" role="progressbar" [style.width.%]="progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <div class="card-footer text-center">   
+                 
+                  <button  type="submit" class="btn btn-sm btn-primary" >SUBMIT</button>
+
+                  <span><button  type="button" class="btn btn-sm btn-primary" (click)="back()" >CANCEL</button></span>
+                  <!-- (click)="uploadFiles()" -->
+                </div>
+               
+            
+              
+            </form>
+          </div>
+        </div>
+   </div>
+  

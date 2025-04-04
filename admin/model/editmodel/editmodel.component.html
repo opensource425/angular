@@ -1,0 +1,46 @@
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <strong> {{titleHeading}}</strong>
+          </div>
+          <form #form='ngForm' (ngSubmit)='updateModel()' ngNativeValidate>
+          <div class="card-body"> 
+            
+              <div class="form-group row">
+                <label class="col-md-3 col-form-label" for="file-multiple-input">Language</label>
+                <div class="col-md-9">
+                  <select class="form-control"   (change)="onChange($event.target)" required>
+                    <option *ngFor="let language of languages"  value="{{language.id}}"  [selected]="language.id == lang">
+                      {{ language.value }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                
+                <label class="col-md-3 col-form-label" for="file-multiple-input">Title</label>
+                <div class="col-md-9">
+                  <!-- <input type="file" [uploadx]="options" (state)="onUpload($event)"> -->
+                    <input type="text" class="form-control" [(ngModel)]="title" placeholder="Title" name="title" id="Title" autocomplete="false" required>
+                    <!-- <div *ngIf="errors" class="text-danger">{{
+                      errors
+                    }}</div> -->
+                </div>
+                </div>
+              </div>
+                
+              <div class="card-footer text-center">  
+                  <button  type="submit" class="btn btn-sm btn-primary" >UPDATE</button>
+                  <span><button  type="button" class="btn btn-sm btn-primary" (click)="back()" >CANCEL</button></span>
+                  <!-- (click)="uploadFiles()" -->
+              </div>
+               
+              
+            </form>
+          </div>
+        </div>
+  </div>
+  

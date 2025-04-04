@@ -1,0 +1,37 @@
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <div class="card-group">
+              <div class="card p-4">
+                <div class="card-body">
+                  <form ngNativeValidate (ngSubmit)="forgotPassword()">
+                    <h1>Forgot Password</h1>
+                    <!-- <span *ngIf="errors" class="text-danger">{{
+                      errors
+                    }}</span> -->
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-user"></i></span>
+                      </div>
+                      <input type="email" class="form-control"  [(ngModel)]="email"  placeholder="Email" name="email" required>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-6">
+                        <button type="submit" class="btn btn-primary px-4">Submit</button>
+                      </div>
+                     
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
